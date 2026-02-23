@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Vincenzo Legrottaglie — Sviluppatore Backend & AI</title>
+  <meta name="description" content="Sviluppatore Backend & AI con competenze full stack. PHP, Laravel, Python, architetture RAG, WordPress con Bedrock e Sage.">
+  <meta name="author" content="Vincenzo Legrottaglie">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vincenzo Legrottaglie — Sviluppatore Backend & AI">
+  <meta property="og:description" content="Sviluppatore Backend & AI con competenze full stack. PHP, Laravel, Python, architetture RAG, WordPress con Bedrock e Sage.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vincenzolegrottaglie.github.io">
+  <meta property="og:locale" content="it_IT">
+
+  <!-- Alternate language -->
+  <link rel="alternate" hreflang="it" href="https://vincenzolegrottaglie.github.io/">
+  <link rel="alternate" hreflang="en" href="https://vincenzolegrottaglie.github.io/en/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>V</text></svg>">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', 'sans-serif'],
+            mono: ['SF Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#0f1117] dark:text-gray-200 antialiased leading-relaxed">
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <!-- ===== Header ===== -->
+  <header class="header sticky top-0 z-50 bg-gray-50/85 dark:bg-[#0f1117]/85 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="font-bold text-xl tracking-tight text-gray-900 dark:text-gray-100" aria-label="Vincenzo Legrottaglie — Torna alla home">
+        v<span class="text-blue-600 dark:text-blue-400">.</span>legrottaglie
+      </a>
+
+      <nav class="flex items-center gap-8" aria-label="Navigazione principale">
+        <ul class="hidden md:flex gap-6">
+          <li><a href="#about" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Chi sono</a></li>
+          <li><a href="#projects" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Progetti</a></li>
+          <li><a href="#contact" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contatti</a></li>
+        </ul>
+
+        <a href="/en/" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full border-2 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Switch to English version">
+          <span aria-hidden="true">&#127468;&#127463;</span> EN
+        </a>
+
+        <button class="theme-toggle w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transition-colors text-lg" aria-label="Cambia tema" aria-pressed="false">
+          🌙
+        </button>
+
+        <button class="mobile-menu-btn flex flex-col gap-[5px] md:hidden bg-transparent border-none cursor-pointer p-1" aria-label="Menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="block w-[22px] h-[2px] bg-gray-900 dark:bg-gray-100 rounded-sm" aria-hidden="true"></span>
+          <span class="block w-[22px] h-[2px] bg-gray-900 dark:bg-gray-100 rounded-sm" aria-hidden="true"></span>
+          <span class="block w-[22px] h-[2px] bg-gray-900 dark:bg-gray-100 rounded-sm" aria-hidden="true"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav id="mobile-nav" class="mobile-nav absolute top-full left-0 right-0 flex-col gap-4 bg-white dark:bg-[#1a1b26] border-b border-gray-200 dark:border-gray-800 px-6 py-4" hidden aria-label="Navigazione mobile">
+      <ul class="flex flex-col gap-4">
+        <li><a href="#about" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Chi sono</a></li>
+        <li><a href="#projects" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Progetti</a></li>
+        <li><a href="#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== Hero ===== -->
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#0f1117] dark:to-[#1a1b26] text-center px-6 pt-24 pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-28" aria-labelledby="hero-heading">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Ciao, mi chiamo</p>
+        <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-tight tracking-tight mb-4">Vincenzo Legrottaglie</h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">Sviluppatore Backend &amp; AI con competenze full stack. Costruisco soluzioni lato server con PHP, Laravel, Python e architetture RAG.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-lg transition-colors hover:-translate-y-0.5">
+          Contattami <span aria-hidden="true">&darr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Chi Sono ===== -->
+    <section id="about" class="px-6 py-20 md:py-24" aria-labelledby="about-heading">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="about-heading" class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Chi sono</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-10 text-lg">Backend, AI e un po' di tutto il resto.</p>
+
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p>Sono uno sviluppatore Backend con un focus crescente sullo sviluppo di applicazioni basate su Intelligenza Artificiale. La mia formazione full stack mi ha dato una solida conoscenza dell'intero ciclo di sviluppo, mentre la mia esperienza professionale si concentra sulla creazione di soluzioni lato server.</p>
+            <p>Attualmente lavoro in <a href="https://www.netseven.it/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">NET7 S.r.l.<span class="sr-only"> (si apre in una nuova finestra)</span></a> a Pisa, dove sviluppo applicazioni AI basate su architetture RAG con il framework Cheshire Cat, e creo siti WordPress con stack moderni come Bedrock e Sage. Mi occupo anche di API REST con Laravel e gestione di ambienti Docker.</p>
+            <p>Appassionato di problem-solving, cerco sempre di scrivere codice pulito e di adottare le best practice dello sviluppo moderno.</p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Python (si apre in una nuova finestra)">Python</a>
+            <a href="https://www.php.net" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="PHP (si apre in una nuova finestra)">PHP</a>
+            <a href="https://laravel.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Laravel (si apre in una nuova finestra)">Laravel</a>
+            <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="RAG (si apre in una nuova finestra)">RAG</a>
+            <a href="https://cheshirecat.ai" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Cheshire Cat (si apre in una nuova finestra)">Cheshire Cat</a>
+            <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="OpenAI API (si apre in una nuova finestra)">OpenAI API</a>
+            <a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Azure (si apre in una nuova finestra)">Azure</a>
+            <a href="https://qdrant.tech" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Qdrant (si apre in una nuova finestra)">Qdrant</a>
+            <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="WordPress (si apre in una nuova finestra)">WordPress</a>
+            <a href="https://roots.io/bedrock/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Bedrock (si apre in una nuova finestra)">Bedrock</a>
+            <a href="https://roots.io/sage/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Sage (si apre in una nuova finestra)">Sage</a>
+            <a href="https://laravel.com/docs/blade" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Blade (si apre in una nuova finestra)">Blade</a>
+            <a href="https://getcomposer.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Composer (si apre in una nuova finestra)">Composer</a>
+            <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Docker (si apre in una nuova finestra)">Docker</a>
+            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Git (si apre in una nuova finestra)">Git</a>
+            <a href="https://nginx.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Nginx (si apre in una nuova finestra)">Nginx</a>
+            <a href="https://n8n.io" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="N8N (si apre in una nuova finestra)">N8N</a>
+            <a href="https://langfuse.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Langfuse (si apre in una nuova finestra)">Langfuse</a>
+            <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="MySQL (si apre in una nuova finestra)">MySQL</a>
+            <a href="https://mariadb.org" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="MariaDB (si apre in una nuova finestra)">MariaDB</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="JavaScript (si apre in una nuova finestra)">JavaScript</a>
+            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Tailwind CSS (si apre in una nuova finestra)">Tailwind CSS</a>
+            <a href="https://dev.java" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-500 dark:hover:text-blue-300 px-3 py-1.5 rounded-md text-sm font-medium font-mono transition-colors" aria-label="Java (si apre in una nuova finestra)">Java</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Progetti ===== -->
+    <section id="projects" class="px-6 py-20 md:py-24" aria-labelledby="projects-heading">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="projects-heading" class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Progetti</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-10 text-lg">Alcuni dei lavori su cui ho lavorato.</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- Card 1 -->
+          <!-- TODO: Aggiungere link repo GitHub per RAG Chatbot -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#129302;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">RAG Chatbot</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Applicazione AI basata su architettura RAG con Cheshire Cat. Integrazione con OpenAI, Qdrant come vector DB e monitoraggio tramite Langfuse.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>Python</span>
+              <span>Cheshire Cat</span>
+              <span>Qdrant</span>
+              <span>OpenAI</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <!-- TODO: Aggiungere link repo GitHub per Tema WordPress Custom -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#127760;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Tema WordPress Custom</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Tema custom sviluppato con lo stack moderno Bedrock + Sage. Templating con Blade, gestione dipendenze con Composer, build asset con Bud.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>WordPress</span>
+              <span>Bedrock</span>
+              <span>Sage</span>
+              <span>Blade</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <!-- TODO: Aggiungere link repo GitHub per API REST Laravel -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#9889;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">API REST Laravel</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Backend API RESTful sviluppato con Laravel. Autenticazione, validazione, gestione risorse e documentazione degli endpoint.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>PHP</span>
+              <span>Laravel</span>
+              <span>MySQL</span>
+              <span>Docker</span>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <!-- TODO: Aggiungere link repo GitHub per N8N Automation Workflows -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#9881;&#65039;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">N8N Automation Workflows</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Pipeline di automazione self-hosted con N8N per processi aziendali: integrazione dati, notifiche e orchestrazione servizi.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>N8N</span>
+              <span>Docker</span>
+              <span>Nginx</span>
+              <span>API</span>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <!-- TODO: Aggiungere link demo per Portfolio Personale -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#128187;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Portfolio Personale</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Questo sito! HTML, Tailwind CSS e JavaScript. Dark/light mode, responsive, ospitato su GitHub Pages.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>HTML</span>
+              <span>Tailwind CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <!-- TODO: Aggiungere link repo GitHub per Monitoring Stack -->
+          <article class="project-card bg-white dark:bg-[#1a1b26] border border-gray-200 dark:border-gray-800 rounded-xl p-7 hover:shadow-lg dark:hover:shadow-black/30">
+            <div class="mb-3">
+              <span class="text-2xl" aria-hidden="true">&#128202;</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Monitoring Stack</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">Setup di Langfuse self-hosted per il monitoraggio delle applicazioni AI: tracciamento delle chiamate LLM, costi e performance.</p>
+            <div class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 dark:text-gray-400">
+              <span>Langfuse</span>
+              <span>Docker</span>
+              <span>Azure</span>
+              <span>Python</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contatti ===== -->
+    <section id="contact" class="px-6 py-20 md:py-24 text-center" aria-labelledby="contact-heading">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="contact-heading" class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Contatti</h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-md mx-auto mb-8 leading-relaxed">Hai un progetto in mente o vuoi semplicemente fare una chiacchierata? Scrivimi!</p>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="https://www.linkedin.com/in/vincenzo-legrottaglie/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg font-medium text-gray-900 dark:text-gray-100 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:-translate-y-0.5 transition-all" aria-label="LinkedIn (si apre in una nuova finestra)">
+            <span aria-hidden="true">&#128101;</span> LinkedIn
+          </a>
+          <a href="https://github.com/vincenzolegrottaglie" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg font-medium text-gray-900 dark:text-gray-100 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:-translate-y-0.5 transition-all" aria-label="GitHub (si apre in una nuova finestra)">
+            <span aria-hidden="true">&#128187;</span> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="text-center py-8 px-6 border-t border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 text-sm">
+    <div class="max-w-5xl mx-auto">
+      <p>&copy; 2026 Vincenzo Legrottaglie. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
