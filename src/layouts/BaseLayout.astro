@@ -1,0 +1,151 @@
+---
+import { t, type Lang } from '../data/content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = t[lang];
+---
+<!DOCTYPE html>
+<html lang={c.htmlLang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>{c.meta.title}</title>
+  <meta name="description" content={c.meta.description} />
+  <meta name="author" content="Vincenzo Legrottaglie" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={c.meta.title} />
+  <meta property="og:description" content={c.meta.description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={c.meta.ogUrl} />
+  <meta property="og:locale" content={c.meta.ogLocale} />
+  <meta property="og:image" content="https://vincenzolegrottaglie.github.io/assets/og-image.svg" />
+
+  <!-- Alternate language -->
+  <link rel="alternate" hreflang="it" href="https://vincenzolegrottaglie.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://vincenzolegrottaglie.github.io/en/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Apply theme before paint to prevent flash -->
+  <script is:inline>
+    (function () {
+      var KEY = 'theme-preference';
+      var stored = localStorage.getItem(KEY);
+      var dark = stored
+        ? stored === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.classList.add('dark');
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', function (e) {
+          if (!localStorage.getItem(KEY)) {
+            document.documentElement.classList.toggle('dark', e.matches);
+          }
+        });
+    })();
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#0f1117] dark:text-gray-200 antialiased leading-relaxed">
+
+  <a href="#main-content" class="skip-link">{c.skipLink}</a>
+
+  <Header lang={lang} />
+
+  <slot />
+
+  <Footer lang={lang} />
+
+  <script>
+    const THEME_KEY = 'theme-preference';
+    const doc = document.documentElement;
+
+    function currentTheme() {
+      return doc.classList.contains('dark') ? 'dark' : 'light';
+    }
+
+    function updateToggleIcon(theme: string) {
+      const btn = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      if (!btn) return;
+      const isDark = theme === 'dark';
+      btn.setAttribute(
+        'aria-label',
+        (isDark ? btn.dataset.ariaDark : btn.dataset.ariaLight) ?? ''
+      );
+      btn.setAttribute('aria-pressed', String(isDark));
+      btn.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    // Theme toggle
+    const toggleBtn = document.querySelector<HTMLButtonElement>('.theme-toggle');
+    if (toggleBtn) {
+      updateToggleIcon(currentTheme());
+      toggleBtn.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        doc.classList.toggle('dark', next === 'dark');
+        localStorage.setItem(THEME_KEY, next);
+        updateToggleIcon(next);
+      });
+    }
+
+    // Sticky header shadow
+    const header = document.querySelector('.header');
+    if (header) {
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    // Mobile menu
+    const mobileBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn');
+    const mobileNav = document.querySelector<HTMLElement>('.mobile-nav');
+    if (mobileBtn && mobileNav) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = !mobileNav.hidden;
+        mobileNav.hidden = isOpen;
+        mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      mobileNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileNav.hidden = true;
+          mobileBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileNav.hidden) {
+          mobileNav.hidden = true;
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          mobileBtn.focus();
+        }
+      });
+    }
+
+    // Smooth scroll with focus management
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const id = anchor.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector<HTMLElement>(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

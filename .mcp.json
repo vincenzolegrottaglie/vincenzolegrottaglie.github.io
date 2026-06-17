@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"]
+    },
+    "a11y": {
+      "command": "npx",
+      "args": ["a11y-mcp"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

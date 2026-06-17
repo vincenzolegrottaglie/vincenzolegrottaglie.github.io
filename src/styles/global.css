@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom styles + a11y (ported from css/style.css) ===== */
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
