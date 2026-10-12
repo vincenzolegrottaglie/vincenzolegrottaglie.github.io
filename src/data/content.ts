@@ -12,24 +12,32 @@ export const skills: { name: string; url: string }[] = [
   { name: 'Laravel', url: 'https://laravel.com' },
   { name: 'RAG', url: 'https://en.wikipedia.org/wiki/Retrieval-augmented_generation' },
   { name: 'Cheshire Cat', url: 'https://cheshirecat.ai' },
+  { name: 'Agno', url: 'https://www.agno.com' },
   { name: 'OpenAI API', url: 'https://platform.openai.com' },
+  { name: 'Claude API', url: 'https://docs.anthropic.com' },
   { name: 'Azure', url: 'https://azure.microsoft.com' },
   { name: 'Qdrant', url: 'https://qdrant.tech' },
+  { name: 'Langfuse', url: 'https://langfuse.com' },
   { name: 'WordPress', url: 'https://wordpress.org' },
   { name: 'Bedrock', url: 'https://roots.io/bedrock/' },
   { name: 'Sage', url: 'https://roots.io/sage/' },
+  { name: 'Gutenberg', url: 'https://wordpress.org/gutenberg/' },
   { name: 'Blade', url: 'https://laravel.com/docs/blade' },
   { name: 'Composer', url: 'https://getcomposer.org' },
   { name: 'Docker', url: 'https://www.docker.com' },
   { name: 'Git', url: 'https://git-scm.com' },
+  { name: 'GitLab CI', url: 'https://docs.gitlab.com/ci/' },
   { name: 'Nginx', url: 'https://nginx.org' },
   { name: 'N8N', url: 'https://n8n.io' },
-  { name: 'Langfuse', url: 'https://langfuse.com' },
+  { name: 'PostgreSQL', url: 'https://www.postgresql.org' },
   { name: 'MySQL', url: 'https://www.mysql.com' },
   { name: 'MariaDB', url: 'https://mariadb.org' },
   { name: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+  { name: 'TypeScript', url: 'https://www.typescriptlang.org' },
+  { name: 'React', url: 'https://react.dev' },
   { name: 'Tailwind CSS', url: 'https://tailwindcss.com' },
   { name: 'Java', url: 'https://dev.java' },
+  { name: 'Claude Code', url: 'https://www.anthropic.com/claude-code' },
 ];
 
 /** Projects — icon + tech tags shared, title/description localized. */
@@ -43,26 +51,62 @@ export interface Project {
 export const projects: Project[] = [
   {
     icon: '🤖',
+    tags: ['Python', 'Agno', 'PostgreSQL', 'React'],
+    it: {
+      title: 'Agenti AI',
+      desc: 'Agenti AI con memoria, base di conoscenza e approvazioni da parte di un operatore umano. Backend Python con Agno, PostgreSQL e pgvector, interfaccia web in React e Next.js.',
+    },
+    en: {
+      title: 'AI Agents',
+      desc: 'AI agents with memory, a knowledge base and human-in-the-loop approvals. Python backend with Agno, PostgreSQL and pgvector, web interface in React and Next.js.',
+    },
+  },
+  {
+    icon: '💬',
     tags: ['Python', 'Cheshire Cat', 'Qdrant', 'OpenAI'],
     it: {
       title: 'RAG Chatbot',
-      desc: 'Applicazione AI basata su architettura RAG con Cheshire Cat. Integrazione con OpenAI, Qdrant come vector DB e monitoraggio tramite Langfuse.',
+      desc: 'Applicazione AI basata su architettura RAG con Cheshire Cat. Integrazione con OpenAI, Qdrant come vector DB e difesa da prompt injection e abusi.',
     },
     en: {
       title: 'RAG Chatbot',
-      desc: 'AI application built on a RAG architecture with Cheshire Cat. Integration with OpenAI, Qdrant as vector DB and monitoring via Langfuse.',
+      desc: 'AI application built on a RAG architecture with Cheshire Cat. Integration with OpenAI, Qdrant as vector DB and protection against prompt injection and abuse.',
+    },
+  },
+  {
+    icon: '📊',
+    tags: ['Langfuse', 'Python', 'PostgreSQL', 'Docker'],
+    it: {
+      title: 'Osservabilità AI',
+      desc: 'Monitoraggio delle applicazioni AI con Langfuse self-hosted: tracciamento delle chiamate LLM, valutazione della qualità delle risposte e dashboard di analisi.',
+    },
+    en: {
+      title: 'AI Observability',
+      desc: 'AI application monitoring with self-hosted Langfuse: LLM call tracing, response quality evaluation and analytics dashboards.',
     },
   },
   {
     icon: '🌐',
-    tags: ['WordPress', 'Bedrock', 'Sage', 'Blade'],
+    tags: ['WordPress', 'Bedrock', 'Sage', 'Gutenberg'],
     it: {
-      title: 'Tema WordPress Custom',
-      desc: 'Tema custom sviluppato con lo stack moderno Bedrock + Sage. Templating con Blade, gestione dipendenze con Composer, build asset con Bud.',
+      title: 'Siti WordPress',
+      desc: 'Siti e temi custom con lo stack Bedrock + Sage: blocchi Gutenberg, template FSE, templating con Blade e ricerca con Elasticsearch.',
     },
     en: {
-      title: 'Custom WordPress Theme',
-      desc: 'Custom theme built with the modern Bedrock + Sage stack. Blade templating, Composer dependency management and Bud asset building.',
+      title: 'WordPress Sites',
+      desc: 'Custom sites and themes with the Bedrock + Sage stack: Gutenberg blocks, FSE templates, Blade templating and Elasticsearch search.',
+    },
+  },
+  {
+    icon: '🛡️',
+    tags: ['Python', 'WordPress', 'GitLab CI', 'Docker'],
+    it: {
+      title: 'Manutenzione WordPress automatizzata',
+      desc: 'Strumento Python che tiene sotto controllo un parco di siti WordPress: inventario di core e plugin, controllo delle vulnerabilità, aggiornamenti e rilascio tramite pipeline CI/CD.',
+    },
+    en: {
+      title: 'Automated WordPress Maintenance',
+      desc: 'Python tool that keeps a fleet of WordPress sites in check: core and plugin inventory, vulnerability checks, updates and releases through CI/CD pipelines.',
     },
   },
   {
@@ -101,18 +145,6 @@ export const projects: Project[] = [
       desc: 'This website! Astro, Tailwind CSS and JavaScript. Dark/light mode, responsive, hosted on GitHub Pages.',
     },
   },
-  {
-    icon: '📊',
-    tags: ['Langfuse', 'Docker', 'Azure', 'Python'],
-    it: {
-      title: 'Monitoring Stack',
-      desc: 'Setup di Langfuse self-hosted per il monitoraggio delle applicazioni AI: tracciamento delle chiamate LLM, costi e performance.',
-    },
-    en: {
-      title: 'Monitoring Stack',
-      desc: 'Self-hosted Langfuse setup for AI application monitoring: LLM call tracing, cost tracking and performance analysis.',
-    },
-  },
 ];
 
 /** Contact links — constant URLs, localized aria labels. */
@@ -128,7 +160,7 @@ export const t = {
     meta: {
       title: 'Vincenzo Legrottaglie — Sviluppatore Backend & AI',
       description:
-        'Sviluppatore Backend & AI con competenze full stack. PHP, Laravel, Python, architetture RAG, WordPress con Bedrock e Sage.',
+        'Sviluppatore Backend & AI con competenze full stack. Agenti AI e chatbot RAG, PHP, Laravel, Python, WordPress con Bedrock e Gutenberg.',
       ogLocale: 'it_IT',
       ogUrl: 'https://vincenzolegrottaglie.github.io/',
     },
@@ -148,15 +180,15 @@ export const t = {
       eyebrow: 'Ciao, mi chiamo',
       name: 'Vincenzo Legrottaglie',
       tagline:
-        'Sviluppatore Backend & AI con competenze full stack. Costruisco soluzioni lato server con PHP, Laravel, Python e architetture RAG.',
+        'Sviluppatore Backend & AI con competenze full stack. Progetto agenti AI e chatbot RAG e sviluppo siti WordPress, con PHP, Laravel e Python.',
       cta: 'Contattami',
     },
     about: {
       heading: 'Chi sono',
       subtitle: 'Backend, AI e un po’ di tutto il resto.',
       paragraphs: [
-        'Sono uno sviluppatore Backend con un focus crescente sullo sviluppo di applicazioni basate su Intelligenza Artificiale. La mia formazione full stack mi ha dato una solida conoscenza dell’intero ciclo di sviluppo, mentre la mia esperienza professionale si concentra sulla creazione di soluzioni lato server.',
-        'Attualmente lavoro in <a href="https://www.netseven.it/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">NET7 S.r.l.<span class="sr-only"> (si apre in una nuova finestra)</span></a> a Pisa, dove sviluppo applicazioni AI basate su architetture RAG con il framework Cheshire Cat, e creo siti WordPress con stack moderni come Bedrock e Sage. Mi occupo anche di API REST con Laravel e gestione di ambienti Docker.',
+        'Sono uno sviluppatore Backend con un focus sull’intelligenza artificiale applicata. La mia formazione full stack mi ha dato una solida conoscenza dell’intero ciclo di sviluppo, mentre la mia esperienza professionale si concentra sulle soluzioni lato server.',
+        'Attualmente lavoro in <a href="https://www.netseven.it/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">NET7 S.r.l.<span class="sr-only"> (si apre in una nuova finestra)</span></a> a Pisa, dove progetto e realizzo agenti AI e chatbot RAG, insieme agli strumenti per monitorarli e valutarli. Sviluppo anche siti WordPress complessi con Bedrock, blocchi Gutenberg e ricerca Elasticsearch, e ne automatizzo la manutenzione con strumenti in Python.',
         'Appassionato di problem-solving, cerco sempre di scrivere codice pulito e di adottare le best practice dello sviluppo moderno.',
       ],
     },
@@ -177,7 +209,7 @@ export const t = {
     meta: {
       title: 'Vincenzo Legrottaglie — Backend & AI Developer',
       description:
-        'Backend & AI Developer with full stack skills. PHP, Laravel, Python, RAG architectures, WordPress with Bedrock and Sage.',
+        'Backend & AI Developer with full stack skills. AI agents and RAG chatbots, PHP, Laravel, Python, WordPress with Bedrock and Gutenberg.',
       ogLocale: 'en_US',
       ogUrl: 'https://vincenzolegrottaglie.github.io/en/',
     },
@@ -197,15 +229,15 @@ export const t = {
       eyebrow: 'Hi, my name is',
       name: 'Vincenzo Legrottaglie',
       tagline:
-        'Backend & AI Developer with full stack skills. I build server-side solutions with PHP, Laravel, Python and RAG architectures.',
+        'Backend & AI Developer with full stack skills. I design AI agents and RAG chatbots and build WordPress sites with PHP, Laravel and Python.',
       cta: 'Get in touch',
     },
     about: {
       heading: 'About me',
       subtitle: 'Backend, AI, and a bit of everything else.',
       paragraphs: [
-        'I’m a Backend Developer with a growing focus on building AI-powered applications. My full stack training gave me a solid understanding of the entire development cycle, while my professional experience is centred on creating server-side solutions.',
-        'I currently work at <a href="https://www.netseven.it/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">NET7 S.r.l.<span class="sr-only"> (opens in a new window)</span></a> in Pisa, where I develop AI applications based on RAG architectures using the Cheshire Cat framework, and build WordPress sites with modern stacks like Bedrock and Sage. I also work on REST APIs with Laravel and manage Docker environments.',
+        'I’m a Backend Developer focused on applied artificial intelligence. My full stack training gave me a solid understanding of the entire development cycle, while my professional experience is centred on server-side solutions.',
+        'I currently work at <a href="https://www.netseven.it/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">NET7 S.r.l.<span class="sr-only"> (opens in a new window)</span></a> in Pisa, where I design and build AI agents and RAG chatbots, along with the tools to monitor and evaluate them. I also develop complex WordPress sites with Bedrock, Gutenberg blocks and Elasticsearch search, and automate their maintenance with Python tools.',
         'Passionate about problem-solving, I always strive to write clean code and follow modern development best practices.',
       ],
     },
